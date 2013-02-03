@@ -1,0 +1,82 @@
+<head>
+	<script type="text/javascript" 
+	src="http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject.js"></script>
+	<script type="text/javascript">
+	<!--
+	function GetUnity() {
+		if (typeof unityObject != "undefined") {
+			return unityObject.getObjectById("unityPlayer");
+		}
+		return null;
+	}
+	if (typeof unityObject != "undefined") {
+		unityObject.embedUnity("unityPlayer", "unity_webplayer_browser_connection.unity3d", 960, 600);
+		
+	}
+	-->
+	</script>
+
+	<!-- bootstrap -->
+	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" 
+	rel="stylesheet">
+	
+	<!-- function called from unity -->
+	<script type="text/javascript" language="javascript">
+	<!--
+	function a( arg ){
+	    alert( arg );
+	}
+	function b( arg ){
+	    alert( arg );
+	}
+	-->
+	</script>
+
+	<script type="text/javascript" language="javascript">
+	<!--
+	//init Web Player
+	//var u = new UnityObject2();
+	//u.initPlugin(jQuery("#unityPlayer")[0], "Example.unity3d");
+	//unityObject.initPlugin(jQuery("#unityPlayer")[0], "Example.unity3d");
+	
+	function call_unity_function(){
+		//u.getUnity().SendMessage("gui_script_object", "detonator", "parameter from browser");
+		GetUnity().SendMessage("gui_script_object", "detonator", "parameter from browser");
+	}
+	-->
+	</script>
+
+
+	<style type="text/css">
+	<!--
+	div.content {
+		margin: auto;
+		width: 960px;
+	}
+	div#unityPlayer {
+		cursor: default;
+		height: 600px;
+		width: 960px;
+	}
+	-->
+	</style>
+
+</head>
+<body>
+	<br>
+	<div class="content">
+		<div id="unityPlayer">
+			<div class="missing">
+				<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+					<img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<br>
+	<center>
+		<button class="btn btn-primary" onclick="call_unity_function();">call unity function</button>
+	</center>
+</body>
+
