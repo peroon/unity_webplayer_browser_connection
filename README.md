@@ -1,5 +1,2 @@
-unity_webplayer_browser_connection
-==================================
-
-Connection test of Unity Web Player and Outside HTML.
-
+demo<br>
+http://peroon.github.io/unity_webplayer_browser_connection/
